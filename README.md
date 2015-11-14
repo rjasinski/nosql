@@ -9,6 +9,7 @@ Rozwiązania zadań z przedmiotu *Bazy NoSQL*:
  - [ ] MapReduce
 
 Informacje o komputerze na którym były wykonywane obliczenia:
+
 |          | Maszyna fizyczna            | Maszyna wirtualne | 
 |----------|-----------------------------|-------------------|
 | Procesor | i5-3350P 4x3.1GHz           | 2 rdzenie 100%    |
@@ -17,7 +18,3 @@ Informacje o komputerze na którym były wykonywane obliczenia:
 | Dysk     | WD Black 500GB 7200rpm 64MB | VDI 80GB          |
 | System   | Windows 7 Pro               | Xubuntu 14.04     |
 
-test tabeli
-| Mongo | PostgresSQL |
-|:-----:|:-------:|
-| 28 | 35 |
