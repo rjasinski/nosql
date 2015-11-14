@@ -16,3 +16,8 @@ Informacje o komputerze na którym były wykonywane obliczenia:
 | SWAP     | 0                           | 4GB               |
 | Dysk     | WD Black 500GB 7200rpm 64MB | VDI 80GB          |
 | System   | Windows 7 Pro               | Xubuntu 14.04     |
+
+test tabeli
+| Mongo | PostgresSQL |
+|:-----:|:-------:|
+| 28 | 35 |
