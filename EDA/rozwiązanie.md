@@ -13,3 +13,4 @@ java BookToCSV ~/Downloads/books_large_p1.txt book_large_p1.csv
     real: 4m23.113s
     user: 3m20.986s
     sys: 0m.23.368s
+Powstały plik zaś ma rozmiar 5.7GB
