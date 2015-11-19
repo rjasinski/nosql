@@ -1,6 +1,6 @@
 Do zadania wykorzystałem BookCorpus.
 
-#Zadanie 2a
+#Zadanie a
 
 #####Konwersja na plik csv została wykonan za pomocą programu BookToCSV zaimplementowanym w jezyku java. [Link do kodu](https://github.com/rjasinski/nosql/blob/master/EDA/BookToCSV.java)
 
@@ -15,6 +15,18 @@ java BookToCSV ~/Downloads/books_large_p1.txt book_large_p1.csv
     sys: 0m23.368s
 Powstały plik zaś ma rozmiar 5.7GB
 
+####PostgreSQL
+#####Utworzenie tabeli poleceniem:
+psql -U rjasisnki -d rjasisnki -c "create table book (ID numeric, word text, line numeric);"
+#####Wczytanie danych poleceniem:
+psql -U rjasisnki -d rjasisnki -c "copy book(ID, word, line) from '/home/rjasisnki/EDA/book_large_p1.csv' with delimiter ',' csv header"
+
+######Czas wgrywania danych do bazy:
+
+    real: 7m20.421s
+    user: 0m0.022s
+    sys: 0m0.035s
+
 ####MongoDB
 #####Wczytanie do bazy poleceniem:
 mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --headerline
@@ -24,3 +36,47 @@ mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --header
     real: 68m37.284s
     user: 11m19.003s
     sys: 1m57.698s
+
+#Zadanie b
+##Zliczenie rekordów w bazie
+###PostgreSQL
+#####Polecenie:
+psql -U rjasisnki -d rjasisnki -c "select count(*) from book"
+
+Wynik: 245840578
+
+######Czas zliczania:
+
+    real: 3m10.781s
+    user: 0m0.070s
+    sys: 0m0.028s
+
+####MongoDB
+#####Polecenia w konsoli mongo:
+db.train.count()
+
+Wynik: 245848691
+
+Czas był prawie zerowy.
+
+#Zadanie c
+##Zliczenie unikalnych słów
+###PostgreSQL
+#####Polecenie:
+psql -U rjasisnki -d rjasisnki -c "select count(distinct word) from book"
+
+Wynik: 
+
+######Czas zliczania:
+
+    real: s
+    user: s
+    sys: s
+
+####MongoDB
+#####Polecenia w konsoli mongo:
+db.train.distinct("word").length
+
+Wynik: 
+
+Czas 
