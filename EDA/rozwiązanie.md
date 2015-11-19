@@ -65,18 +65,21 @@ Czas był prawie zerowy.
 #####Polecenie:
 psql -U rjasisnki -d rjasisnki -c "select count(distinct word) from book"
 
-Wynik: 
+Wynik: 1051914
 
 ######Czas zliczania:
 
-    real: s
-    user: s
-    sys: s
+    real: 67m28.964s
+    user: 0m0.022ss
+    sys: 0m0.061s
 
 ####MongoDB
 #####Polecenia w konsoli mongo:
 db.train.distinct("word").length
 
-Wynik: 
+Wynik:
 
-Czas 
+distinct failed: {
+	"errmsg" : "exception: distinct too big, 16mb cap"
+
+
