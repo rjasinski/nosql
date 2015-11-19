@@ -8,9 +8,19 @@ Do zadania wykorzystałem BookCorpus.
 
 java BookToCSV ~/Downloads/books_large_p1.txt book_large_p1.csv
 
-######Czas wgrywania danych do bazy:
+######Czas konwersji:
 
     real: 4m23.113s
     user: 3m20.986s
-    sys: 0m.23.368s
+    sys: 0m23.368s
 Powstały plik zaś ma rozmiar 5.7GB
+
+####MongoDB
+#####Wczytanie do bazy poleceniem:
+mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --headerline
+
+######Czas wgrywania danych do bazy:
+
+    real: 68m37.284s
+    user: 11m19.003s
+    sys: 1m57.698s
