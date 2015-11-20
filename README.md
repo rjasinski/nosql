@@ -1,7 +1,7 @@
 # nosql
 Rozwiązania zadań z przedmiotu *Bazy NoSQL*:
 
-1. [Zaliczenie](zaliczenie.md):
+1. [Zaliczenie](https://github.com/rjasinski/nosql/blob/master/EDA/rozwi%C4%85zanie.md):
  - [ ] Neo4j
  - [X] EDA
 1. [Egzamin](egzamin.md)
