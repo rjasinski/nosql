@@ -114,3 +114,6 @@ Po wyszukaniu i zapoznaniu się z informacjami o tym błędzie wynika że do agr
 | - długi czas najprostrzych agregacji | + szybkie zliczenie |
 | - ogromny czas poświęcony na konfiguracje | - długi import          |
 | - żmudne i niewygodne tworzenei poleceń które zadziałąją | - nieradzenie sobie z agregacjami na tak dużym zbiorze |
+
+####Spostrzeżenie
+Obie bazy danych mimo tak dużych zbiorów zużywaja naprawde niewiele pamięci RAM. Można wiec poprawic wydajnosć aplikacji implementując dodatkowo serwer cache który pośredniczy między bazą a aplikacjami. Język Java mechanizm do stworzenia go posiada w standardowej bibliotece.
