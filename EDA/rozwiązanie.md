@@ -3,8 +3,10 @@ Do zadania wykorzystałem BookCorpus.
 #Zadanie a
 
 #####Konwersja na plik csv została wykonan za pomocą programu BookToCSV zaimplementowanym w jezyku java. [Link do kodu](https://github.com/rjasinski/nosql/blob/master/EDA/BookToCSV.java)
+Jego struktura to ID - oznaczajace nr wystapienia slowa w tekscie, word - zawiera slowo oraz line zawierajace nr lini w ktorej bylo slowo.
 
 Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego zapisanych w pliku [stopword.txt](https://github.com/rjasinski/nosql/blob/master/EDA/stopword.txt). Dodatkowo po wstępnym zajrzeniu do danych okaząło się że znaki interpunkcyjne bedą wykrywane jako słowa. Z tego powodu zostały za wczasu dodane do słów stopu.
+
 
 #####Polecenie konwersji
 
