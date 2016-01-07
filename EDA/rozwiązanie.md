@@ -3,7 +3,7 @@ Do zadania wykorzystałem BookCorpus.
 #Zadanie a
 
 #####Konwersja na plik csv została wykonan za pomocą programu BookToCSV zaimplementowanym w jezyku java. [Link do kodu](https://github.com/rjasinski/nosql/blob/master/EDA/BookToCSV.java)
-Jego struktura to ID - oznaczajace nr wystapienia slowa w tekscie, word - zawiera slowo oraz line zawierajace nr lini w ktorej bylo slowo.
+Jego struktura to: ID - oznaczające nr wystąpienia słowa w tekście, word - zawiera słowo, line - zawierajaca nr lini w której było słowo.
 
 Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego zapisanych w pliku [stopword.txt](https://github.com/rjasinski/nosql/blob/master/EDA/stopword.txt). Dodatkowo po wstępnym zajrzeniu do danych okaząło się że znaki interpunkcyjne bedą wykrywane jako słowa. Z tego powodu zostały za wczasu dodane do słów stopu.
 
@@ -38,7 +38,7 @@ psql -U rjasisnki -d rjasisnki -c "copy book(ID, word, line) from '/home/rjasisn
 
 ![Wykres pamięci](https://github.com/rjasinski/nosql/blob/master/EDA/grafika/import_psql.png)
 
-Wynik ten jest dość zaskakujacy, dane zostały wczytane niezwykle szybko, a w dodatku obciążenie procesora było ardzo niskie. Tym razme jednak wykorzystane były aż dwa rdzenie co sugerowało by współbieżność tego procesu.
+Wynik ten jest dość zaskakujacy, dane zostały wczytane niezwykle szybko, a w dodatku obciążenie procesora było bardzo niskie. Tym razme jednak wykorzystane były aż dwa rdzenie co sugerowało by współbieżność tego procesu.
 
 ####MongoDB
 #####Wczytanie do bazy poleceniem:
