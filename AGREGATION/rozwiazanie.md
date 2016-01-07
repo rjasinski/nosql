@@ -15,6 +15,10 @@ Jego struktura to: ID - oznaczające nr wystąpienia słowa w tekście, word - z
 
 Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego zapisanych w pliku [stopword.txt](https://github.com/rjasinski/nosql/blob/master/EDA/stopword.txt). Dodatkowo po wstępnym zajrzeniu do danych okaząło się że znaki interpunkcyjne bedą wykrywane jako słowa. Z tego powodu zostały za wczasu dodane do słów stopu.
 
+#####Wczytanie do bazy poleceniem:
+
+mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --headerline
+
 ##Punkt 3
 
 #####Zliczamy ilość słów zaczynajacych sie na "a"
