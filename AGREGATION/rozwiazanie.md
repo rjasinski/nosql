@@ -19,14 +19,12 @@ Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego 
 
 #####Zliczamy ilość słów zaczynajacych sie na "a"
 
-db.train.aggregate([
+db.train.aggregate(
+  [
 
   { s_word: { $exists: true}, $substr: [ "$word", 0, 1 ] },
-  
   { $match: { s_word: "a" } },
-  
   { ile: { $sum: 1} },
-  
   { $limit: 1 }
-  
-])
+  ]
+  );
