@@ -3,8 +3,8 @@ Rozwiązania zadań z przedmiotu *Bazy NoSQL*:
 
 1. [Zaliczenie](https://github.com/rjasinski/nosql/blob/master/EDA/rozwi%C4%85zanie.md):
  - [X] EDA
-1. [Egzamin](egzamin.md)
- - [ ] Aggregation Pipeline
+1. [Egzamin](https://github.com/rjasinski/nosql/blob/master/AGREGATION/rozwiazanie.md):
+ - [X] Aggregation Pipeline
  - [ ] MapReduce
 
 Informacje o komputerze na którym były wykonywane obliczenia:
