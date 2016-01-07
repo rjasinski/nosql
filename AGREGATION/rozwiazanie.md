@@ -21,7 +21,6 @@ Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego 
 
 db.train.aggregate(
   [
-
   { s_word: { $exists: true}, $substr: [ "$word", 0, 1 ] },
   { $match: { s_word: "a" } },
   { ile: { $sum: 1} },
