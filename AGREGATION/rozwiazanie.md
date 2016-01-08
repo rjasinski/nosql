@@ -4,10 +4,15 @@ Do zadania wykorzystuje bazę z zadania EDA. Jest to Book_Corpus.
 
 Przykładowy JSON z bazy:
 
-db.train.find({word: "name"}).limit(1)
-
 ```js
-{ "_id" : ObjectId("564d006e2c60dab0b9d6ebe8"), "ID" : 52, "word" : "name", "line" : 5 }
+db.train.find({word: "name"}).limit(1)
+{ 
+   "_id" : ObjectId("564d006e2c60dab0b9d6ebe8"),
+   "ID" : 52,
+   "word" : "name",
+   "line" : 5
+}
+```
 
 ##Punkt 2
 
@@ -18,7 +23,9 @@ Program wykorzystuje zbiór standardowych słów stopu dla języka angielskiego 
 
 #####Wczytanie do bazy poleceniem:
 
+```sh
 mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --headerline
+```
 
 ##Punkt 3
 
@@ -31,3 +38,4 @@ db.train.aggregate([
   { ile: { $sum: 1} },
   { $limit: 1 }
 ]);
+```
