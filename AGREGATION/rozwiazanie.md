@@ -6,6 +6,7 @@ Przykładowy JSON z bazy:
 
 db.train.find({word: "name"}).limit(1)
 
+```js
 { "_id" : ObjectId("564d006e2c60dab0b9d6ebe8"), "ID" : 52, "word" : "name", "line" : 5 }
 
 ##Punkt 2
@@ -24,7 +25,7 @@ mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --header
 #####Zliczamy ilość słów zaczynajacych sie na "a"
 
 ```js 
-db.train.aggregate( [
+db.train.aggregate([
   { s_word: { $exists: true}, $substr: [ "$word", 0, 1 ] },
   { $match: { s_word: "a" } },
   { ile: { $sum: 1} },
