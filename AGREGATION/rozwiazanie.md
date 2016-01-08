@@ -23,11 +23,10 @@ mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --header
 
 #####Zliczamy ilość słów zaczynajacych sie na "a"
 
-db.train.aggregate(
-  [
+```js 
+db.train.aggregate( [
   { s_word: { $exists: true}, $substr: [ "$word", 0, 1 ] },
   { $match: { s_word: "a" } },
   { ile: { $sum: 1} },
   { $limit: 1 }
-  ]
-  );
+]);
