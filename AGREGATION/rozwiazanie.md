@@ -29,13 +29,13 @@ mongoimport -d fnsql -c train --type csv --file ~/EDA/book_large_p1.csv --header
 
 ##Punkt 3
 
-#####Zliczamy ilość słów zaczynajacych sie na samogłoskę
+Zliczamy ilość słów zaczynajacych sie na samogłoskę
 
 ```js 
 db.train.aggregate([
-  { $project: { ID : 1 , word : 1 , line : 1 , firstWord : { $toLower: { $substr: [ "$word", 0, 1 ] } } } },
-  { $match: { $or: [ { firsWord: "a" }, { firstWord: "e" }, { firstWord: "o"}, { firstWord: "u"}, {firstWord: "u"} ] } },
-  { $group: {_id: "$firstWord", count: {$sum: 1} } },
+  { $project: {ID: 1 , word: 1 , line: 1 , firstWord: {$toLower: {$substr: ["$word", 0, 1 ]}}} },
+  { $match: {$or: [ {firsWord: "a"}, {firstWord: "e"}, {firstWord: "o"}, {firstWord: "u"}, {firstWord: "u"}]} },
+  { $group: {_id: "$firstWord", count: {$sum: 1}} },
   { $sort: {count: -1} }
 ]);
 ```
