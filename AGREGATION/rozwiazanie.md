@@ -74,3 +74,13 @@ db.train.aggregate([
 | ever | 272052 |
 | oh | 246027 |
 | everything | 230267 |
+
+Zliczenie najczęściej występujących długości słów.
+
+```js
+db.train.aggregate([
+   { $group: {_id: "$word.length", count: {$sum: 1}} },
+   { $sort: {count: -1} },
+   { $limit: 10 }
+]);
+```
