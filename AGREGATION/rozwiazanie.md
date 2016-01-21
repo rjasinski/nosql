@@ -49,6 +49,10 @@ Czas wykonywania około 25 minut. Wynik:
 | u | 2485326 |
 | y | 1664233 |
 
+Użycie zasobów
+
+![Wykres pamięci](https://github.com/rjasinski/nosql/blob/master/AGREGATION/Screenshot_agregation1.png)
+
 Zliczamy ilość unikalnych słów rozpoczynających się samogłoską
 
 ```js
@@ -84,3 +88,7 @@ db.train.aggregate([
    { $limit: 10 }
 ]);
 ```
+
+Zużycie zasobów:
+
+![Wykres pamięci](https://github.com/rjasinski/nosql/blob/master/AGREGATION/Screenshot_agregation3.png)
