@@ -48,3 +48,29 @@ Czas wykonywania około 25 minut. Wynik:
 | o | 4772552 |
 | u | 2485326 |
 | y | 1664233 |
+
+Zliczamy ilość unikalnych słów rozpoczynających się samogłoską
+
+```js
+db.train.aggregate([
+   { $project: {ID: 1 , word: 1 , line: 1 , firstWord: {$toLower: {$substr: ["$word", 0, 1 ]}}} },
+   { $match: {$or: [{firsWord: "a"}, {firstWord: "e"}, {firstWord: "o"},
+   {firstWord: "u"}, {firstWord: "y"}]} },
+   { $group: {_id: "$word", count: {$sum: 1}} },
+   { $sort: {count: -1} },
+   { $limit: 10 }
+]);
+```
+
+| wyraz | ilość wystąpień |
+|-------|-----------------|
+| one | 1349789 |
+| eyes | 850179 |
+| even | 672775 |
+| us | 535031 |
+| enough | 3084112 |
+| yes | 286556 |
+| every | 274561 |
+| ever | 272052 |
+| oh | 246027 |
+| everything | 230267 |
